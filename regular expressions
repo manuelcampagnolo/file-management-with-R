@@ -1,0 +1,20 @@
+Simple examples:
+
+    Any string containing "a" matches the regex /a/.
+    A string beginning with "a" matches the regex /^a/
+    A string ending with "a" matches the regex /a$/
+    A string s matches the regex /r1r2/ iff there exist substrings s1 and s2 such that s = s1.s2 and s1 matches /r1/ and s2 matches /r2/.
+    A string s matches the regex /r1|r2/ iff either s matches /r1/ or s matches /r2/ (or both).
+    A string s matches the regex /r1*/ iff either s contains the empty string (always true) or s matches /r1(r1*)/ (or of course both).
+    A string s matches the regex /[r1]/ iff s is exactly one character and that character appears in the set r1.
+    To have a ] in the set, place it first.
+    To invert a set, precede it with a ^.
+    Numeric and alphabetic sets may be abbreviated similar to [0-9], [a-z] and [A-Z].
+
+Here are some more:
+
+    /.*/ matches anything.
+    /colo(u|)r/ matches either "color" or "colour". (This can also be written /colou?r/.)
+    /(0|1|2|3|4|5|6|7|8|9)*(1|3|5|7|9)/ matches all odd positive integers. (Shorter written as /[0-9]*[13579]/. -- ChristofferHammarstrom)
+    /(1|)(0(0*)1)*(0*)/ matches all strings of 0s and 1s without two 1s in a row.
+    /0?[1-9]|[12][0-9]|3[01]/ matches all valid days of the months with 31 days. 
