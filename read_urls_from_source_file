@@ -1,0 +1,2 @@
+x<-scan(gofile("landsat_usgs_source_file_31-03-2015.txt"),what=character())
+x[grepl(pattern="href=",x=x) & grepl(pattern="tar.gz",x=x)]
