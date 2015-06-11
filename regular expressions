@@ -2,6 +2,7 @@
 list.files(path="C:\\Users\\mlc\\Documents\\investigacao\\boston\\VIIRS_06_hdf5\\H18V03_500m\\",
             pattern="(^NPP).*(BRDF4).*(L3D.I).*(hdf5$)")
 
+which(grepl(pattern="estrela",icnfv@data$NOME,ignore.case = TRUE)) # which string contain "estrela", not case sensitive
 
 Simple examples:
 
