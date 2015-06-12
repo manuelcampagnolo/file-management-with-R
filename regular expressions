@@ -4,6 +4,18 @@ list.files(path="C:\\Users\\mlc\\Documents\\investigacao\\boston\\VIIRS_06_hdf5\
 
 which(grepl(pattern="estrela",icnfv@data$NOME,ignore.case = TRUE)) # which string contain "estrela", not case sensitive
 
+# explorar nomes das culturas com expressões regulares
+nomes.culturas<-unique(as.character(tabela$NOME_CULTU))
+length(nomes.culturas) # 56
+nomes.culturas[which(grepl(pattern="Vinha",nomes.culturas))]
+nomes.culturas[which(grepl(pattern="(p|P)ermanentes$",nomes.culturas))] # acaba em "permanentes" ou "Permanentes"
+nomes.culturas[which(grepl(pattern="?ermanentes$",nomes.culturas))] # ? pode ser qualquer caractér
+nomes.culturas[which(grepl(pattern="[b-c]|[B-C]",nomes.culturas))] # contém um dos seguintes: b,c,B,C
+nomes.culturas[which(grepl(pattern="„",nomes.culturas))] # contem o símbolo "„"
+nomes.culturas[which(grepl(pattern="[^a-zA-Z0-9. ()/]",nomes.culturas))] #  contém caractér que não é letra, número, espaço, ponto, parêntesis ou /
+
+
+
 Simple examples:
 
     Any string containing "a" matches the regex /a/.
