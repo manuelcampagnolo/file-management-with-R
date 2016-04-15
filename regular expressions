@@ -1,5 +1,3 @@
-substitute(x^deg,list(x=vza,deg="o"))
-
 
 
 list.files(path="C:\\Users\\mlc\\Documents\\investigacao\\boston\\VIIRS_06_hdf5\\H18V03_500m\\",
