@@ -1,0 +1,1 @@
+substitute(x^deg,list(x=vza,deg="o"))
