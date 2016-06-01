@@ -1,0 +1,23 @@
+aulas<-"C:\\Users\\sysop\\Documents"    
+gofile<-function(x) paste(aulas,x,sep="\\")
+
+x<-scan(gofile("notas_projectos__2015_2016.txt"),what=character(),sep="\n",quote=NULL)
+
+v<-list()
+df<-data.frame(numero=c(),nome=c(),nota=c())
+i<-1
+copiar<-FALSE
+while (i <= length(x))
+{
+  v[[i]]<-""
+  s<-strsplit(x[i][[1]],"  ")
+  for (j in 2:length(s[[1]]))
+  {
+    if (s[[1]][j]!="") v[[i]]<-c(v[[i]],s[[1]][j]) 
+  }
+  if ((v[[i]][4])!="NA") df<-rbind(df,data.frame(numero=v[[i]][2], nome=v[[i]][3],nota=format(as.numeric(v[[i]][4]),digits=1,nsmall=2)))
+  i<-i+1
+}
+df<-df[order(as.character(df$nome)),]
+
+write.table(df,file=gofile("pauta_projectos_2015_2016.txt"),quote=FALSE,row.names=FALSE,col.names=FALSE)
